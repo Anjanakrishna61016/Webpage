@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+ top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.dropdown
+{
+	position:relative;
+	display:inline-block;
+}
+
+.dropdown-content
+{
+	display:none;
+	position:absolute;
+	background-color:#DCDCDC;
+	min-width:160px;
+	box-shadow:0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding:12px 16px;
+	z-index:1;
+}
+.dropdown:hover .dropdown-content{
+	display:block;
+}
+
+.zoom {
+  transition: transform .2s; 
+  margin: 0 auto;
+  }
+  
+.zoom:hover {
+  transform: scale(1.2); 
+}
+.open-button {
+  background-color:white;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.form-popup {
+  display: none;
+  position: fixed;
+ top: 174px;
+ left: 55%;
+ margin-left:-272px;
+  z-index: 9;
+}
+
+
+.form-container {
+  max-width: 500px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.form-container .btn {
+  background-color: #047BD5;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+span.psw {
+  float: right;
+  padding-top: 3px;
+}
+
+.form-container .cancel {
+  background-color:orange;
+}
+
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+</style>
+<title>Flipkart</title>
+</head>
+
+<body bgcolor="white">
+
+
+<table  width="100%">
+<tr>
+<td bgcolor="047BD5" align="center" > <img src="D:\webpage\flipkart-coupon-codes.png" > </td>
+<td bgcolor="047BD5"> <input type="text" placeholder="Search for products, brands and more" size="80"> </td>
+<th bgcolor="047BD5"><button class="open-button" onclick="openForm()"  ><font color="047BD5">Login</font></button>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Flipkart Login</h1>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+	  <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label> 
+	<button type="submit" class="btn">Login</button>
+	  
+    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+	<span class="psw"><a href="#">Forgot password?</a></span>
+	<span><a href="#">SignUp</a></span>
+  </form>
+</div>
+</th>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+  </script>
+<th bgcolor="047BD5"><font color="white">Become a Seller</font></th>
+<th bgcolor="047BD5"><font color="white">More</font></th>
+<th bgcolor="047BD5" ><input type="image" name="Cart" src="D:\webpage\shopping-cart-royal-brites-poster-foam-board-photo-paper-royal-lace-19.png" alt="Cart" width="15" height="10"><font color="white">Cart</font> </th>
+</tr> 
+</table>
+<br>
+
+<table border="0" width="100%">
+<tr>
+<th class="zoom"><img  src ="D:\webpage\png\offer.png" class="img-circle" width="100" height="100"></th>
+<th class="zoom"><img  src ="D:\webpage\png\grocery.png"width="100" height="100" class="img-circle"></th>
+<th class="zoom"><img  src ="D:\webpage\png\mobile.png" width="100" height="100" class="img-circle"></th>
+<th class="zoom"><img  src ="D:\webpage\png\fashion.png" width="100" height="100" class="img-circle"> </th>
+<th class="zoom"><img  src ="D:\webpage\png\images.jpg" width="100" height="100" class="img-circle"> </th>
+<th class="zoom"><img  src ="D:\webpage\png\couch.png" width="100" height="100" class="img-circle"></th>
+<th class="zoom"><img  src = "D:\webpage\png\a.png""a.png"width="100" height="100" class="img-circle"></th>
+<th class="zoom"><img  src ="D:\webpage\png\images.png" width="100" height="100" class="img-circle"></th>
+<th class="zoom"><img  src ="D:\webpage\png\ttoys.png"width="100" height="100" class="img-circle"></th>
+</tr>
+</table>
+
+<table border="0" width="100%" >
+<tr>
+<th>          </th>
+<th>Top Offers</th>
+<th>Grocery</th>
+<th>Mobiles</th>
+<th width="12.5%">
+<div class ="dropdown">
+<span>Fashion</span>
+ <div class="dropdown-content">
+ <p>Women</p>
+ <p>Men</p>
+ <p>Kids clothing</p>
+ <p>Accesories</p>
+ <p>Footwear</p>
+ </div>
+ </div>
+ </th>
+<th width="12.5%">
+<div class ="dropdown">
+<span>Electronics</span>
+<div class="dropdown-content">
+ <p>TV's and more</p>
+ <p>Home Theatre</p>
+ <p>Speakers</p>
+ <p>Computer peripherals</p>
+ <p>Laptop Accesories</p>
+ </div>
+ </div>
+</th>
+<th width="12.5%">
+<div class ="dropdown">
+<span>Home</span>
+<div class="dropdown-content">
+ <p>Furniture</p>
+ <p>Home decor</p>
+ <p>Home Lighting</p>
+ <p>Kitchen Appliances</p>
+ <p>Gardening tools</p>
+ </div>
+ </div>
+</th>
+<th>Appliances</th>
+<th>Travel</th>
+<th>   Beauty, Toys and More</th>
+<th>          </th>
+
+</tr>
+</table>
+<br>
+
+
+<div class="slideshow-container">
+
+<div class="mySlides">
+
+  <img src="D:\webpage\Flipkart_Fashion_Sale.png" style="width:100%">
+</div>
+
+<div class="mySlides">
+ 
+  <img src="D:\webpage\big-billion-days-sale-banner.png"style="width:100%">
+</div>
+
+<div class="mySlides">
+ 
+  <img src="D:\webpage\Flipkart_TV_Days_flipkart_04Aug.png"style="width:100%">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<br><br>
+<table border="0" width="100%" bgcolor="white">
+<tr>
+<td colspan="5"><h2>Latest in the Store</h2></hr></td>
+
+<tr>
+<th class="zoom" ><img src="D:\webpage\png\blowdryer.png"width="55%"></th>
+<th class="zoom"><img src= "D:\webpage\menfashion.png"width="55%"></th>
+<th class="zoom"><img src= "D:\webpage\png\Watch.png"width="55%"></th>
+<th class="zoom"><img src="D:\webpage\png\women.png" width="55%"></th>
+<th class="zoom"><img src= "D:\webpage\png\womenshoe.png"width="55%"></th>
+<th class="zoom"><img src="D:\webpage\png\ch.png"width="55%"></th>
+</tr>
+
+<tr>
+<th>Top brands on blowdryers</th>
+<th>Casuals for Men</th>
+<th>Unisex Watches</th>
+<th>Women semiformals</th>
+<th>High heels</th>
+<th>Perfumes</th>
+</tr>
+</table>
+
+<br><br>
+
+<div>
+<img src="D:\webpage\2offer.jpg" width="100%" height="100%">
+</div>
+
+<br><br>
+
+<table>
+
+<tr>
+<th class="zoom"><img src="D:\webpage\png\belts.jpg"width="55%"></th>
+<th class="zoom"><img src= "D:\webpage\png\cases.jpg" width="75%"></th>
+<th class="zoom"><img src= "D:\webpage\png\garden.jpg" width="75%"></th>
+<th class="zoom"><img src="D:\webpage\png\hd.png"width="75%"></th>
+<th class="zoom"><img src= "D:\webpage\png\Headphone-Transparent-Free-PNG.png" width="75%"></th>
+<th class="zoom"><img src="D:\webpage\png\homedecor.png"width="75%"></th>
+<th class="zoom"><img src="D:\webpage\png\shampoo_PNG24.png"width="75%"></th>
+<th class="zoom"><img src="D:\webpage\png\tanishq.png"width="75%"></th>
+</tr>
+
+<tr>
+<th><font color="green" align "center">Min 50% off<font><br><font color="black">Price 299/-</font></th>
+<th><font color="green"align "center"> Min 50% off<font><br><font color="black">Price 299/-</font></th>
+<th><font color="green"align "center"> Min 50% off<font><br><font color="black">Price 299/-</font></th>
+<th><font color="green"align "center"> Min 50% off<font><br><font color="black">Price 299/-</font></th>
+<th><font color="green"align "center"> Min 50% off<font><br><font color="black">Price 299/-</font></th>
+<th><font color="green"align "center"> Min 50% off<font><br><font color="black">Price 299/-</font></th>
+<th><font color="green"align "center"> Min 50% off<font><br><font color="black">Price 299/-</font></th>
+<th><font color="green"align "center"> Min 50% off<font><br><font color="black">Price 299/-</font></th>
+</tr>
+
+</table>
+
+</body>
+</html>
